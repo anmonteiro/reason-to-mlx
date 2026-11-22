@@ -1,0 +1,28 @@
+type 'value selector =
+  | ByField : 'value Field.t -> 'value selector
+  | ByEvent : Event.t selector
+
+type packed = Packed : 'value selector -> packed
+type action = ReplaceSelected : 'value selector -> action
+
+let describe : type a. a selector -> string = function
+  | ByField _ -> "field"
+  | ByEvent -> "event"
+
+let classify (x : 'value selector) =
+  let prefix = "selector: " in
+
+  let label =
+    match x with
+    | ByField _ -> "field"
+    | ByEvent -> "event"
+  in
+  prefix ^ label
+
+let describeTwo : type a. a selector -> a selector -> string =
+ fun x y ->
+  let left = describe x in
+
+  (* no blank before this comment, one blank after it *)
+  let right = describe y in
+  left ^ right

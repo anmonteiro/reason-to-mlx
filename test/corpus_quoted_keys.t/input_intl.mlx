@@ -1,0 +1,1 @@
+let seoTitle = [%intl.s {js|SEO Blog by {acme}|js}] @@ [%mel.obj { acme = "Acme" }]

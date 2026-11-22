@@ -1,0 +1,13 @@
+let soleLetStarBody () = let* a = b in
+
+                         c
+
+let soleLetBody () = let a = b in
+
+                     c
+
+let afterStatement () =
+  foo ();
+  let* a = b in
+
+  c

@@ -1,0 +1,28 @@
+type ranking =
+  | Address
+  | SharedCount
+  | Coverage
+
+let buildOrder ~(displayMode : DisplayMode.t) ranking =
+  let open Warehouse.Comparison in
+  let module Query = FieldDescription.Query in
+  let module Direction = Query.Direction in
+  match ranking with
+  | Address ->
+    [
+      Direction.simple
+        (let open ComparedItem in
+         get address);
+    ]
+  | SharedCount ->
+    [
+      Direction.simple
+        (let open ComparedItem in
+         get sharedCount);
+    ]
+  | Coverage ->
+    [
+      Direction.simple
+        (let open ComparedItem in
+         get coveragePercent);
+    ]

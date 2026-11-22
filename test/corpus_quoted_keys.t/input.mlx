@@ -1,0 +1,9 @@
+let headers =
+  [%mel.obj
+    {
+      literal_key = ("application/json" [@mel.as "literal-key"]);
+      user_agent = userAgent [@mel.as "user-agent"];
+      contentType = contentType [@mel.as "Content-Type"];
+      \#type = requestType;
+      \#method = requestMethod;
+    }]

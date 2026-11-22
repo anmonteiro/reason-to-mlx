@@ -1,0 +1,56 @@
+let twoStatements () =
+  foo ();
+
+  bar ()
+
+let threeStatements () =
+  foo ();
+  bar ();
+
+  baz ()
+
+let afterBlockStatement x =
+  if x then a ();
+
+  b ()
+
+let insideBranches x =
+  if x then (
+    a ();
+
+    b ())
+  else (
+    c ();
+
+    d ())
+
+let insideCase x =
+  match x with
+  | A ->
+    a ();
+
+    b ()
+  | B -> c ()
+
+let insideLoops () =
+  for i = 0 to 3 do
+    a ();
+
+    b ()
+  done;
+
+  while true do
+    c ();
+
+    d ()
+  done
+
+let bindingOperator x =
+  let* a = foo x in
+  let* b = foo a in
+
+  bar b
+
+let noBlank () =
+  foo ();
+  bar ()

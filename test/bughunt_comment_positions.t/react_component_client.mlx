@@ -1,0 +1,1 @@
+let[@react.client.component (* comment after attribute *)] make = fun ~x -> React.int x

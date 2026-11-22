@@ -1,0 +1,13 @@
+let toQuery ?(onlyData = false) filters =
+  Js.Dict.empty ()
+  |. Period.toQuery filters.period
+  |. Aggregation.toQuery filters.aggregation
+  |. Metric.toQuery filters.metric
+  |. Pagination.toQuery filters.pagination
+  |. Country.toQuery filters.country
+  |. Device.toQuery filters.device
+  |. SearchType.toQuery filters.searchType
+  |. fun dict ->
+  match onlyData with
+  | true -> dict
+  | false -> Columns.toQuery dict filters.columns

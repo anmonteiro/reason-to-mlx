@@ -1,0 +1,10 @@
+/**
+ * React context for sharing drag state between the "Add widget" button
+ * (in the header) and the report content (drop zones between widgets).
+ *
+ * This context bridges the gap between DaReportAddWidgetButton (drag source)
+ * and DaReport (drop targets) which are rendered in separate component subtrees.
+ */
+
+// React DnD item type identifiers (shared between drag sources and drop targets)
+let widgetDndType = "widget";

@@ -1,0 +1,19 @@
+let groupedEntries entries =
+  entries
+  |. List.toArray
+  |. Array.groupBy
+       ~key:(fun { date = entryDate; _ } ->
+         entryDate |. MomentUtils.fromStringUtc |. MomentUtils.formatRaw "YYYY-MM-DD")
+       ~compare:String.compare
+  |. Array.map (fun (entryDate, changes) ->
+    ( entryDate,
+      changes
+      |. List.fromArray
+      |. List.map (fun { change = changeValue; commit = commitInfo; _ } -> changeValue, commitInfo) ))
+  |. List.fromArray
+  |. List.sort (fun (dateA, _) (dateB, _) ->
+    let a = MomentUtils.fromStringUtc dateA in
+    let b = MomentUtils.fromStringUtc dateB in
+    match MomentUtils.Compare.isAfter a b with
+    | true -> -1
+    | false -> 1)

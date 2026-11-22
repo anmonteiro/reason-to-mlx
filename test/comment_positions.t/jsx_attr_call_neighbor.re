@@ -1,0 +1,10 @@
+let view = () =>
+  <div
+    ref={refs.setFloating}
+    styles=Css.tooltip
+    // Keep the tooltip in normal flow so Recharts can measure it while FloatingUI shifts its position.
+    style={ReactDOM.Style.combine(floatingStyles, ReactDOM.Style.make(~position="relative", ()))}
+    // Moving inside the scrollable tooltip must not change the active chart point underneath it.
+    onMouseMove={event => React.Event.Mouse.stopPropagation(event)}>
+    <ChartTooltip label config />
+  </div>;

@@ -1,0 +1,1 @@
+let f () = <Checkbox status=s label=((* note *) <Flex><Text /></Flex>) checked onChange=(fun _ -> foo ()) />

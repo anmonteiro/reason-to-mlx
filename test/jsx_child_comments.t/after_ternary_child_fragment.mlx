@@ -1,0 +1,13 @@
+let view () =
+  <>
+    (match x with
+    | true -> <A />
+    | false -> RR.null)
+    (* note *)
+    <B />
+    (match y with
+    | true -> <A />
+    | false -> RR.null)
+    (* second *)
+    <C />
+  </>

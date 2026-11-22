@@ -1,0 +1,11 @@
+let a = <div
+  styles={A +++ B(1) +++ C}
+  // K1
+  ref={r}>
+  <span />
+</div>;
+let b = f(
+  ~styles=A +++ B(1) +++ C,
+  // K2
+  ~ref=r,
+);

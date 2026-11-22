@@ -1,0 +1,6 @@
+let a ~children = <Foo>...children</Foo>
+let b ~x = <Foo label="l">...x</Foo>
+let c ~x = <div>...x</div>
+let d ~x = <Foo><span /> <span /></Foo>
+let e ~children = <Foo>...children</Foo>
+let f ~xs = <div>...(List.map f xs)</div>

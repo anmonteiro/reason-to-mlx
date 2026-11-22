@@ -1,0 +1,19 @@
+let rec truncateLongStringsInJson ~maxLen (json : Js.Json.t) =
+  match Js.Json.classify json with
+  | JSONString str ->
+    if String.length str > maxLen then
+      Js.Json.string
+        (List.joinWith
+           [
+             str |. String.substring ~from:0 ~to_:maxLen;
+             "...";
+             "(more";
+             NumFormat.Int.format (String.length str - maxLen);
+             ")";
+           ]
+           " ")
+    else json
+  | JSONArray arr -> arr |. Array.map (fun item -> truncateLongStringsInJson ~maxLen item) |. Js.Json.array
+  | JSONObject obj ->
+    obj |. Js.Dict.map ~f:((fun value -> truncateLongStringsInJson ~maxLen value) [@u]) |. Js.Json.object_
+  | JSONNull | JSONFalse | JSONTrue | JSONNumber _ -> json

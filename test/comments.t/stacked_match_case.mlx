@@ -1,0 +1,14 @@
+let f x =
+  match x with
+  | A -> 1
+  (* one *)
+  (* two *)
+  | B -> 2
+
+let g x =
+  match x with
+  | A -> 1
+  (* one *)
+  (* two *)
+  (* three *)
+  | B -> 2

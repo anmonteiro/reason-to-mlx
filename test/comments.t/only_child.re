@@ -1,0 +1,4 @@
+let view = () =>
+  <div>
+    // Only comment, no other children.
+  </div>;

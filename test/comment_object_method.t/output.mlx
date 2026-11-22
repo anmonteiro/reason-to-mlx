@@ -1,0 +1,15 @@
+let named =
+  object (this)
+    method m = (* before the name *) 1
+  end
+
+let body =
+  object (this)
+    method m = (* before the body *) 1
+  end
+
+let after =
+  object (this)
+    method m = 1 (* after the body *)
+    method n = 2
+  end

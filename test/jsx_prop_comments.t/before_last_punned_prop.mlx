@@ -1,0 +1,2 @@
+let f () = <Item a=1 b c=(* note *) c />
+let g = 1

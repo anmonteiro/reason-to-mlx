@@ -1,0 +1,31 @@
+let a =
+  List.map xs (fun x ->
+    (* c1 *)
+    let y = x in
+    y)
+let b =
+  List.map
+    (fun x ->
+      (* c2 *)
+      let y = x in
+      y)
+    xs
+let c =
+  useEffect1
+    (fun () ->
+      (* c3 *)
+      let y = 1 in
+      y)
+    [| a |]
+let d =
+  List.map xs (fun (k, { title; fields }) ->
+    (* c4 *)
+    let y = 1 in
+    y)
+let e =
+  <div>
+    (List.map xs (fun (k, { title; fields }) ->
+       (* c5 *)
+       let y = 1 in
+       y))
+  </div>

@@ -1,0 +1,6 @@
+(* k1 *)
+external toBeCloseTo : expected:float -> (* k2 *) numDigits:int -> ?timeout:int -> unit -> unit = "toBeCloseTo"
+[@@mel.send]
+
+(* k3 *)
+type cb = a:int -> (* k4 *) b:int -> unit

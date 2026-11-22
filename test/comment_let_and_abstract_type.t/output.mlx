@@ -1,0 +1,24 @@
+let rec a x =
+  match x with
+  | 0 -> 1
+  | n -> b (n - 1)
+
+(* about b *)
+and b x = a x
+
+let f () =
+  let k = 1 in
+  let rec go n =
+    match n = 0 with
+    | true -> 0
+    | false -> stop (n - 1)
+  (* about stop *)
+  and stop n = go n in
+  go k
+
+let g () =
+  let k = 1 in
+
+  (* keeps the function sugar *)
+  let add ~by x = x + by + k in
+  add ~by:1 2

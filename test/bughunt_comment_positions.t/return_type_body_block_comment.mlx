@@ -1,0 +1,5 @@
+let f (x : int) : string =
+  (* comment leads the body *)
+  match x with
+  | 0 -> "zero"
+  | _ -> "other"

@@ -1,0 +1,45 @@
+let before = 0
+
+(* between before and WithBlanks: no source blank, so none is expected *)
+module WithBlanks = struct
+  let a = 1
+
+  let b = 2
+  let c = 3
+  (* between c and d: no blank before this comment, one blank after it *)
+
+  let d = 4
+end
+
+module Outer = struct
+  module Inner = struct
+    let x = 1
+
+    let y = 2
+  end
+
+  let z = Inner.y
+end
+
+module type Measure = sig
+  type t
+
+  val isImprovement : t -> bool
+  val shouldShow : t -> bool
+end
+
+module BuildBadge (Source : Measure) = struct
+  let tone = 1
+
+  let render = 2
+end
+
+include struct
+  let p = 1
+
+  let q = 2
+  let r = 3
+end
+(* between the include above and after: a source blank, so one is expected *)
+
+let after = 1

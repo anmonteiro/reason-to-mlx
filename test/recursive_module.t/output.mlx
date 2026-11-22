@@ -1,0 +1,11 @@
+type nodeId
+type props
+
+module rec Branch : sig
+  val makeProps : id:nodeId -> level:int -> unit -> props
+  val make : props -> React.element
+end = struct
+  external makeProps : id:nodeId -> level:int -> unit -> props = "" [@@mel.obj]
+
+  let make props = <BranchView props />
+end

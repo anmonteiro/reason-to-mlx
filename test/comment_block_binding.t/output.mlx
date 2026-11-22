@@ -1,0 +1,31 @@
+let top =
+  (* top comment *)
+  let c = 1.2 in
+  c
+
+let f () =
+  let a = foo 1 in
+
+  let b =
+    (* let comment *)
+    let c = 1.2 in
+    c
+  in
+  b
+
+let h () =
+  let a = foo 1 in
+  let b =
+    (* plain comment *)
+    bar a
+  in
+  b
+
+let i x =
+  let a = foo x in
+  let b =
+    (* sequence comment *)
+    ignore a;
+    a
+  in
+  b

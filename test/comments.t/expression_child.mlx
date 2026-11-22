@@ -1,0 +1,1 @@
+let view items = <div> (* Comment about the mapping. *) (Belt.Array.map items (fun item -> item))</div>

@@ -1,0 +1,14 @@
+let f x y =
+  match x, y with
+  | Some a, _ (* explains the guard *) when a > 0 -> 1
+  | _ -> 0
+let g r =
+  match r with
+  | {
+   plan = A | B;
+   (* explains the next field *)
+   chartPermissions = `No;
+   other = _;
+  } ->
+    1
+  | _ -> 0

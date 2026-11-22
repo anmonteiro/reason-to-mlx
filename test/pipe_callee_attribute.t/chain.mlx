@@ -1,0 +1,1 @@
+let f xs = xs |. List.map (fun x -> x + 1) |. (RR.indexKeyedList [@alert "-unsafe_keys"]) Fn.identity

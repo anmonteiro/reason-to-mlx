@@ -1,0 +1,4 @@
+let f = () => {
+  /** Explains the call. */
+  Js.log("hi");
+};

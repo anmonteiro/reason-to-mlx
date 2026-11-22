@@ -1,0 +1,4 @@
+let view value =
+  <Text>
+    ([%intl.el {js|Value: {value}|js}] @@ [%mel.obj { value = <Text>value</Text> }] (* Trailing JSX comment. *))
+  </Text>

@@ -1,0 +1,5 @@
+let momentUtc () = MomentUtils.nowUtc ()
+
+let tzWeekdayToUtc weekday hour tz =
+  let open MomentUtils in
+  momentUtc () |> toTz tz |. setDay (PmWeekday.toInt weekday) |. setHour hour |> toTz `UTC |> getDay |> PmWeekday.ofInt

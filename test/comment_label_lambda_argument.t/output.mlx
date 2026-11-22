@@ -1,0 +1,7 @@
+let y =
+  f ~first:1
+    ~second:(* K1 *) (fun x -> x + 1)
+    ~third:(* K2 *) (fun x ->
+      (* K3 *)
+      x + 1)
+let z = f (* K4 *) ~first:(fun x -> x + 1)

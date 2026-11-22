@@ -1,0 +1,10 @@
+let f () =
+  let a = 1 in
+  (* Doc for the result. *)
+  a + 1
+
+let g () =
+  let a = 1 in
+  let b = 2 in
+  (* Before final call. *)
+  h a b

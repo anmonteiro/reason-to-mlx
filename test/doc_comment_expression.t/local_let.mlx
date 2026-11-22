@@ -1,0 +1,5 @@
+let f () =
+  let a = 1 in
+  (* Documents the local let below. *)
+  let b = 2 in
+  a + b

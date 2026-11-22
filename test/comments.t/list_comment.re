@@ -1,0 +1,4 @@
+let values = [
+  // List element comment.
+  "value",
+];

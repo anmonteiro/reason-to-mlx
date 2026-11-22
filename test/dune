@@ -1,0 +1,5 @@
+(cram
+ (deps
+  ../main.exe
+  .ocamlformat
+  (glob_files */.ocamlformat-ignore)))

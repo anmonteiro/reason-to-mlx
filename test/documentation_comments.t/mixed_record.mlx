@@ -1,0 +1,6 @@
+type state = {
+  count : int;  (** FIRST_FIELD_DOC *)
+  (* BEFORE_SECOND_FIELD *)
+  label : string;
+  active : bool;  (** LAST_FIELD_DOC *) (* AFTER_LAST_FIELD *)
+}

@@ -1,0 +1,6 @@
+let f () =
+  let a = compute () in
+  let b = transform a in
+
+  (* Keep the comment above the panel it leads. *)
+  <Panel><Thing /></Panel>

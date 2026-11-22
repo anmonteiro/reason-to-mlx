@@ -1,0 +1,1 @@
+let f () = <Item a=a (* note *) b=2 c=3 />

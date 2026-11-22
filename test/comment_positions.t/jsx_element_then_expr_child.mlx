@@ -1,0 +1,5 @@
+let view ~isOpen ~children =
+  <div>
+    <CloseButton onClick=(fun () -> onClose ()) /> (* HACK: should wait until animation stops *)
+    (RR.renderIfTrue isOpen children)
+  </div>

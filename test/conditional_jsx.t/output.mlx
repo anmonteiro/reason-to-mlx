@@ -1,0 +1,14 @@
+let controls ~activeCredential ~dialogOpen ~chosenCredential ~sendAction ~saveCredential =
+  match Option.isNone activeCredential with
+  | true -> ViewRuntime.null
+  | false ->
+    <>
+      <QuietButton color=Link onClick=(fun _ -> sendAction UnlinkRequested)>[%intl.el {js|Disconnect|js}]</QuietButton>
+      <VerifyDialog
+        title=[%intl.s {js|Disconnect account?|js}]
+        isOpen=dialogOpen
+        onClose=(fun _ -> sendAction DialogDismissed)
+        onConfirm=(fun _ -> saveCredential chosenCredential)>
+        [%intl.el {js|This workspace will no longer be connected.|js}]
+      </VerifyDialog>
+    </>

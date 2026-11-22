@@ -1,0 +1,16 @@
+let[@react.component] make ~(kind : kind) ~(label : string)
+  (* Narrows the options, with a key to refetch on. *)
+  ?(where : Q.Dimension.Filter.t option) ?(whereKey : string = "") ~(customerId : string option)
+  ~(timerange : Gads_query.timerange) ~(timerangeKey : string) ~(selected : selection list)
+  ~(onChange : selection list -> unit) =
+  <div />
+
+module CategoryRow = struct
+  let[@react.component] make ~(onCategoriesChange : int -> string list -> unit)
+    ~(onMatchTypeChange : int -> ProductCatalogueFilters.ContentCategory.contentCategoryMatchType -> unit)
+    ~(onMatchModeChange : int -> TextFilter_t.matchType -> unit)
+    (* Shows the scope select before the operator *)
+    ~(showScope : bool) ~(onScopeChange : int -> ProductCatalogueFilters.ContentCategory.categoryScope -> unit)
+    ~(onRuleDelete : unit -> unit) =
+    <div />
+end

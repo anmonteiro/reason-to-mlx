@@ -1,0 +1,5 @@
+let make ~size =
+  <SvgIcon
+    customViewBox=(getViewBox size)
+    size=(* Info icon does not support adaptive size for now. *) (NonAdaptive (getSize size))
+  />

@@ -1,0 +1,3 @@
+let[@react.component] make ?(color : Section_Css.color = `blue) =
+  (* Show banner only at desired time interval. *)
+  RR.renderIfTrue isBannerAvailable <StAprilFoolsDayBanner color />

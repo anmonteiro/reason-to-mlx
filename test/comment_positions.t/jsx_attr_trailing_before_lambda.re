@@ -1,0 +1,8 @@
+let make = () =>
+  <input
+    styles=Css.input
+    checked
+    type_="checkbox"
+    tabIndex={-1} // input has opacity 0 and focus state is not visible. focus on visible element instead
+    onChange={_ => onChange()}
+  />;

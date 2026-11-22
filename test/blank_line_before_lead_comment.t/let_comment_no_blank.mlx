@@ -1,0 +1,6 @@
+let f x =
+  let a = foo x in
+  let b = bar x in
+  (* leading comment *)
+  let c, d = baz a b in
+  a + b + c + d

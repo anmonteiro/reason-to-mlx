@@ -1,0 +1,2 @@
+let config = [%mel.obj { acme = ("https://example.com/api" [@mel.as "Acme"]) }]
+let seoTitle = [%intl.s {js|SEO Blog by {acme}|js}] @@ [%mel.obj { acme = "Acme" }]

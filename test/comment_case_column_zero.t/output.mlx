@@ -1,0 +1,11 @@
+let z =
+  match x with
+  | A -> 1
+  (* K1 *)
+  | B -> 2
+
+let w =
+  match x with
+  | A -> 1
+  (* K2 *)
+  | B -> 2

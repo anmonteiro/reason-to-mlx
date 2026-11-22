@@ -1,0 +1,4 @@
+module WorkspaceLoader = struct
+  module Contract = FetchWorkspaceContract
+  let fetchWorkspace (channel : Contract.channel) = Transport.send (Contract.make ()) { channel; returnTo = Summary }
+end

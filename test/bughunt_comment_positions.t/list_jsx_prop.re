@@ -1,0 +1,4 @@
+let view = () => <Foo items=[
+  // comment
+  1,
+] />;

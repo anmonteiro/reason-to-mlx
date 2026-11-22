@@ -1,0 +1,25 @@
+let f (x : int) = ignore (x : int)
+let g x = ignore x
+let h ~(x : string) () = ignore (x : string)
+let i (x : _) = ignore x
+let j (x : 'a) = ignore x
+let k (x : int -> int) = ignore x
+let l () =
+  let y : int list = [] in
+  ignore (y : int list)
+let m () =
+  let y = 1 in
+  ignore y
+let n (x : int) =
+  let x = foo () in
+  ignore x
+let o (x : string option) =
+  (function
+    | Some x -> ignore x
+    | None -> ())
+    x
+let p (x : int) = ignore (f x)
+let q (x : unit) = ignore x
+let r ~(x : string) () = ignore (x : string)
+let s (x : int) = ignore (x : int)
+let t (x : Js.Global.timeoutId) = ignore (x : Js.Global.timeoutId)

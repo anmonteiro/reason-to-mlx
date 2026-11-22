@@ -1,0 +1,1 @@
+let view () = <Foo logoEl=(<Img />) reviewText=(* Explains why reviewText is authored copy. *) "hi" />

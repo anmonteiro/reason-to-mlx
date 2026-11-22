@@ -1,0 +1,8 @@
+let%melange_only add a (* after a *) = fun b -> (* before the sum *) a + b (* after the sum *)
+
+let%melange_only value = (* before the value *) 1
+
+let platform =
+  match%platform Runtime.platform with
+  | Native -> (* before native *) 1
+  | Client -> 2 (* after client *)

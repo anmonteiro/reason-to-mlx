@@ -1,0 +1,16 @@
+let a = () =>
+  <>
+    /* first */
+    <A />
+    /* second */
+    <B />
+  </>;
+let b = () =>
+  <div>
+    <>
+      <A />
+      /* last */
+    </>
+  </div>;
+let c = () => <> /* only */ </>;
+let d = () => <> <A /> </> /* after */;

@@ -1,0 +1,20 @@
+let f column =
+  match column with
+  | A | B
+  (* c1 *)
+  | C | D ->
+    ""
+  | E -> "e"
+
+let g = function
+  | A x
+  | B x
+  (* c2 *)
+  | C x ->
+    x
+  | _ -> 0
+
+let h x =
+  match x with
+  | A | B (* c3 *) | C -> 1
+  | D -> 2

@@ -1,0 +1,13 @@
+let pair = {
+  a: 1,
+  // one
+  b: 2,
+};
+
+let triple = {
+  a: 1,
+  // one
+  // two
+  b: 2,
+  c: 3,
+};

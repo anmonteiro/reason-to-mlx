@@ -1,0 +1,11 @@
+let view footer =
+  match footer with
+  | None -> React.null
+  | Some footer ->
+    <Grid>
+      modal
+      (* First sibling comment. *)
+      (* Second sibling comment. *)
+      (* Third sibling comment. *)
+      <ReportFooter footer />
+    </Grid>

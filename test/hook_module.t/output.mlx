@@ -1,0 +1,18 @@
+module PendingNode = struct
+  let use notifyOutside resolveNode =
+    let handlePointer =
+      React.useCallback1
+        (fun pointerEvent ->
+          let clickedNode = pointerEvent |. PointerSource.fromEvent |. PageEvent.targetElement in
+          let containerNode = resolveNode () in
+          Option.forEach containerNode (fun boundaryNode ->
+            if not (DomElement.contains clickedNode boundaryNode) then notifyOutside pointerEvent))
+        [| notifyOutside |]
+    in
+    React.useEffect1
+      (fun () ->
+        let pageTarget = PageDocument.asEventTarget pageDocument in
+        PageTarget.addPointerListener handlePointer pageTarget;
+        Some (fun _ -> PageTarget.removePointerListener handlePointer pageTarget))
+      [| handlePointer |]
+end

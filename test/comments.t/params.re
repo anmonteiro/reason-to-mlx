@@ -1,0 +1,3 @@
+let f = (/* first param */ x, y) => x + y;
+
+let k = (~a, /* second param */ ~b) => a + b;

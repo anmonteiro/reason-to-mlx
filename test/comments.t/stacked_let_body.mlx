@@ -1,0 +1,12 @@
+let f () =
+  let a = 1 in
+  (* one *)
+  (* two *)
+  a + 1
+
+let g () =
+  let a = 1 in
+  (* one *)
+  (* two *)
+  (* three *)
+  a + 1

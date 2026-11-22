@@ -1,0 +1,5 @@
+let f = () => {
+  setFoo(Bar);
+  // Reset state before the next call.
+  setBaz(Qux);
+};

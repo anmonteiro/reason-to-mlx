@@ -1,0 +1,3 @@
+(* Fleet helpers shared by the host and cluster pages. *)
+
+let hosts = []

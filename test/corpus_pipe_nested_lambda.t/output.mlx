@@ -1,0 +1,8 @@
+let parseIntList (str : string) : int list = str |. String.split "," |. List.fromArray |. List.filterMap Int.fromString
+
+(** Parse a comma-separated list of location ids from a query string value *)
+let parseLocationIdList (str : string) : Ls_location.Id.t list =
+  str
+  |. String.split ","
+  |. List.fromArray
+  |. List.filterMap (fun id -> id |. Int64.of_string_opt |. Option.map Ls_location.Id.of_int64)

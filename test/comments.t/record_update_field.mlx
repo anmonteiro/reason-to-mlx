@@ -1,0 +1,7 @@
+let f state selectedLabels mediaItems =
+  {
+    state with
+    selectedLabels;
+    (* Doc comment for mediaState. *)
+    mediaState = g mediaItems;
+  }

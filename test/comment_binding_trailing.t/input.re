@@ -1,0 +1,23 @@
+let f = (a): (int => int) => b => a + b; // K1
+
+let g = () => 1; // K2
+
+let h = (x) =>
+  switch (x) {
+  | A => 1
+  | B => 2
+  }; // K3
+
+let rec p = (type a, x: a) => x
+// K4
+and q = (type a, x: a) => x; // K5
+
+let local = () => {
+  let r = (type a, x: a) => x; // K6
+  let s = (a): (int => int) => b => a + b; // K7
+  r(s);
+};
+
+let rec u = (a): (int => int) => b => a + b
+// K8
+and v = (a): (int => int) => b => a + b;

@@ -1,0 +1,7 @@
+let f () =
+  let first = 1 in
+
+  (* Explains the polymorphic function below. *)
+  let poly : type a. a -> a -> a = fun x _ -> x in
+
+  poly first first

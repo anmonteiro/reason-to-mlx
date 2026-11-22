@@ -1,0 +1,5 @@
+(**
+ * Explanation text — with an em dash.
+ *)
+
+let x = 1

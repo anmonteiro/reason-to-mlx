@@ -1,0 +1,6 @@
+let view () =
+  <Foo>
+    [%intl.el "Number of rows"]
+    (* note *)
+    <Bar />
+  </Foo>

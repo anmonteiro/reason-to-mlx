@@ -1,0 +1,4 @@
+module Decode = struct
+  let array decode = (fun json -> (decode json [@u])) [@u]
+  let list decode = (fun json -> Array.to_list ((array decode) json [@u])) [@u]
+end

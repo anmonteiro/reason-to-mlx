@@ -1,0 +1,9 @@
+let make () =
+  let%melange_only[@ocaml.doc
+                    "\n\
+                    \   * Updates the selection in the state when the selection changes,\n\
+                    \   * by dispatching a `SelectionUpdated` action.\n\
+                    \   "] updateSelection () =
+    dispatch SelectionUpdated
+  in
+  updateSelection ()

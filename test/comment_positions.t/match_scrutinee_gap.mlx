@@ -1,0 +1,5 @@
+let rec findGroup (rest : int list) : int =
+  match rest with
+  (* Default group for any new tool will be Writing *)
+  | [] -> 0
+  | x :: _rest -> x

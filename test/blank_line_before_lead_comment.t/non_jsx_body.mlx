@@ -1,0 +1,5 @@
+let f () =
+  let a = compute () in
+
+  (* Keep the comment above the computation it leads. *)
+  a + 1

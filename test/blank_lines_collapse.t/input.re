@@ -1,0 +1,27 @@
+type recordDeclaration = {
+  firstFieldWithAVeryLongDescriptiveName: string,
+
+  secondFieldWithAVeryLongDescriptiveName: int,
+  thirdFieldWithAVeryLongDescriptiveName: bool,
+};
+
+let recordLiteral = {
+  firstFieldWithAVeryLongDescriptiveName: "a",
+
+  secondFieldWithAVeryLongDescriptiveName: 1,
+  thirdFieldWithAVeryLongDescriptiveName: true,
+};
+
+let listLiteral = [
+  "firstElementWithAVeryLongDescriptiveName",
+
+  "secondElementWithAVeryLongDescriptiveName",
+  "thirdElementWithAVeryLongDescriptiveName",
+];
+
+let arrayLiteral = [|
+  "firstElementWithAVeryLongDescriptiveName",
+
+  "secondElementWithAVeryLongDescriptiveName",
+  "thirdElementWithAVeryLongDescriptiveName",
+|];

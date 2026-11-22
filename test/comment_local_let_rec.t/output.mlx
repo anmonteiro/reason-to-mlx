@@ -1,0 +1,8 @@
+let x =
+  (* K1 *)
+  let rec lastTwo (lst : 'a list) : 'a list = lst in
+  (* K2 *)
+  let rec a x = b x
+  (* K3 *)
+  and b x = a x in
+  lastTwo

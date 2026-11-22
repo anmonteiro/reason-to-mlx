@@ -1,0 +1,1 @@
+let[@react.async.component (* comment after attribute *)] make = fun ~x -> React.int x

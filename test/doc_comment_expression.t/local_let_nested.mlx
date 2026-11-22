@@ -1,0 +1,9 @@
+let f () =
+  let a = 1 in
+  let outer () =
+    let b = 2 in
+    (* Documents a local let nested two levels deep. *)
+    let c = 3 in
+    b + c
+  in
+  a + outer ()

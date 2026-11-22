@@ -1,0 +1,10 @@
+let annotated : (* leads the type *) int = 1
+
+let f (x : int) : (* leads the return type *) string = string_of_int x
+
+type ('a (* leads b *), 'b) t = ('a * 'b) list
+
+type ('a (* trails a *), 'b) u = ('a * 'b) list
+
+(* only *)
+type 'a v = 'a list

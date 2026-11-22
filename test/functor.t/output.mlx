@@ -1,0 +1,26 @@
+module type Measure = sig
+  type t
+  val isImprovement : t -> bool
+  val shouldShow : t -> bool
+  val formatValue : t -> string
+  val reversed : bool
+end
+
+module BuildBadge (Source : Measure) = struct
+  type t = Source.t
+
+  let tone value =
+    if Source.reversed then (
+      match Source.isImprovement value with
+      | true -> Palette.Negative
+      | false -> Palette.Positive)
+    else (
+      match Source.isImprovement value with
+      | true -> Palette.Positive
+      | false -> Palette.Negative)
+
+  let render value =
+    match Source.shouldShow value with
+    | true -> Some (Source.formatValue value, tone value)
+    | false -> None
+end

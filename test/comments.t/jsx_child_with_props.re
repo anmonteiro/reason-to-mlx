@@ -1,0 +1,13 @@
+let view = () =>
+  <html>
+    <head>
+      <>
+        <meta charSet="utf-8" />
+        <link rel="stylesheet" href="fonts.css" />
+        // leading comment one
+        // leading comment two
+        <style> {React.string("body {}")} </style>
+        <Script.Inline type_="application/json" />
+      </>
+    </head>
+  </html>;

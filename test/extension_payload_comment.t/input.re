@@ -1,0 +1,21 @@
+let messages = x =>
+  switch (x) {
+  | Report =>
+    [%intl.s
+      // K1
+      {js|Report|js}]
+  | Document => [%intl.s /* K2 */ {js|Document|js}]
+  | Styled => [%css /* K3 */ {| color: red; |}]
+  | Last =>
+    [%css
+      // K4
+      {| color: blue; |}]
+  };
+
+let frames = [%keyframe
+  // K5
+  {| 0% { color: red; } |}];
+
+let style = [%css
+  // K6
+  {| color: red; |}];

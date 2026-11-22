@@ -1,0 +1,26 @@
+opam-version: "2.0"
+synopsis: "Convert Reason source to mlx"
+description:
+  "Converts Reason implementations (.re) to mlx (.mlx) and Reason interfaces (.rei) to OCaml interfaces (.mli)."
+maintainer: ["David Sancho <dsnxmoreno@gmail.com>"]
+authors: ["David Sancho <dsnxmoreno@gmail.com>"]
+license: "MIT"
+homepage: "https://github.com/ocaml-mlx/reason-to-mlx"
+bug-reports: "https://github.com/ocaml-mlx/reason-to-mlx/issues"
+dev-repo: "git+https://github.com/ocaml-mlx/reason-to-mlx.git"
+depends: [
+  "ocaml" {>= "5.5"}
+  "dune" {>= "3.21"}
+  "cmdliner" {>= "1.1.0"}
+  "ppxlib" {>= "0.38.0"}
+  "reason" {>= "3.18.0"}
+  "ocamlformat-mlx" {= "0.29.0.2"}
+  "ocamlformat-mlx-lib" {= "0.29.0.2"}
+  "mlx" {with-test & >= "0.12"}
+  "ocamlfind" {with-test}
+  "ocamlformat" {with-test & = "0.29.0"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install" "@runtest" {with-test}]
+]

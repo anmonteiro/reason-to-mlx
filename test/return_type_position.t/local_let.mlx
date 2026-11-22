@@ -1,0 +1,3 @@
+let g () =
+  let f (x : int) : string = string_of_int x in
+  f 1

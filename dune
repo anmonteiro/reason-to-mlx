@@ -1,0 +1,12 @@
+(executable
+ (name main)
+ (public_name reason-to-mlx)
+ (libraries
+  cmdliner
+  ocamlformat-mlx.bin_conf
+  ocamlformat-mlx-lib
+  ocamlformat-mlx-lib.format_
+  ocamlformat-mlx-lib.ocaml_common
+  ocamlformat-mlx-lib.parser_extended
+  ppxlib
+  reason))

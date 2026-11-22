@@ -1,0 +1,1 @@
+let%melange_only combine ~(left : int) = fun ~(right : int) : int -> left + right

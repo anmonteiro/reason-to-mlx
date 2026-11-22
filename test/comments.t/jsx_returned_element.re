@@ -1,0 +1,9 @@
+let make = (~foo) => {
+  let helper = x => x + 1;
+  // leading comment one
+  // leading comment two
+  <Row gap=8 layout=[`px(1), `auto]>
+    {helper(foo)}
+    {helper(foo)}
+  </Row>;
+};

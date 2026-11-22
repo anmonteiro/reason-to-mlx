@@ -1,0 +1,1 @@
+let pluralCase = [%intl.s {js|{count, plural, one {result} other {results}}|js}] @@ [%mel.obj { count = resultsCount }]

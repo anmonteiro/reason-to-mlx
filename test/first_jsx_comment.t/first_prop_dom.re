@@ -1,0 +1,6 @@
+let view = () =>
+  <div
+    // leads the first prop
+    className="x"
+    id="y"
+  />;

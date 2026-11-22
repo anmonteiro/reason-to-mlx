@@ -1,0 +1,1 @@
+let multi = [%intl.s {js|{acme} and {partner} together|js}] @@ [%mel.obj { acme = "Acme"; partner = "Example" }]

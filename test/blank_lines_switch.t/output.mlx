@@ -1,0 +1,10 @@
+let describe x =
+  match x with
+  | 1 -> "one"
+  | 2 -> "two"
+  | 3 ->
+    let label = "three" in
+
+    let suffix = "!" in
+    label ^ suffix
+  | _ -> "other"

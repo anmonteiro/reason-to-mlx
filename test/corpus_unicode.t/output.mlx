@@ -1,0 +1,23 @@
+(** Text — arrow → emoji 🌟 and Japanese 東京. *)
+let message = "“Quoted” text isn’t ASCII"
+
+let cafe = "café"
+let rocket = "Rocket 🚀 ready"
+
+let escapes = "line1\nline2\tend \"quoted\" \\backslash \x41\066\u{1F600}"
+
+let quoted = {js|Café — 東京 😀 unescaped|js}
+
+let jsxChild = <div>"Café — 東京 😀"</div>
+
+let filterOption =
+  [%intl.el
+    { msg = {js|Cited at any position|js}; desc = "Position filter option: include only pages cited at positions 1–3" }]
+
+let labelledArg = describe ~desc:"Café — 1–3" ()
+
+let match_unicode s =
+  match s with
+  | "café" -> "1–3"
+  | "\x41" -> "ok"
+  | _ -> "other"

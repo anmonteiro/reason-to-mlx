@@ -1,0 +1,1 @@
+let view ~label = <Foo label=(* leads the punned prop *) label b=2 />

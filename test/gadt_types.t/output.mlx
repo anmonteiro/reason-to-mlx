@@ -1,0 +1,14 @@
+type 'value selector =
+  | ByField : 'value Field.t -> 'value selector
+  | ByEvent : Event.t selector
+
+type 'value settings = {
+  selected : 'value list;
+  hovered : 'value option;
+}
+
+type packed = Packed : 'value selector * 'value settings -> packed
+
+type action =
+  | ReplaceSelected : 'value selector * 'value list -> action
+  | ReplaceHovered : 'value selector * 'value option -> action

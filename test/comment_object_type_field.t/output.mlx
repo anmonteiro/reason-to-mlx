@@ -1,0 +1,4 @@
+type userValid =
+  < (* k1 *) kind : string ; (* k2 *) tries : int ; last : int Js.Nullable.t (* k3 *) ; (* k4 *) other : bool > Js.t
+
+type t2 = < a : int ; (* k5 *) b : int > Js.t

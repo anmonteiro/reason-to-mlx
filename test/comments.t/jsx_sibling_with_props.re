@@ -1,0 +1,6 @@
+let view = () =>
+  <MainSection color=`dark stackGap=32>
+    <Box> <Text /> </Box>
+    /* Tablet: body fills remaining width. */
+    <AdaptiveRow> <Thing /> </AdaptiveRow>
+  </MainSection>;

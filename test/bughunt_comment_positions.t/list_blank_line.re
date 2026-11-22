@@ -1,0 +1,5 @@
+let before = 0;
+let values = [
+  // comment
+  "value",
+];

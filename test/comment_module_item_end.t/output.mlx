@@ -1,0 +1,9 @@
+module M = struct
+  let v = 1
+  let w = 2 (* after w *)
+end
+
+module N = struct
+  let v = 1 (* after v *)
+  let w = 2
+end

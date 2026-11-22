@@ -1,0 +1,19 @@
+let createResource ~collection ~ownerAccess ~participantAccess ~resourceName ~scheme ~destination ~personalKey
+  ~priorityInfo () =
+  let resolvedOwnerAccess, resolvedParticipantAccess =
+    match collection with
+    | Some _ -> None, []
+    | None -> ownerAccess, participantAccess
+  in
+  NetworkClient.performResult (CreateResourceRequest.request ())
+    {
+      resourceName;
+      scheme;
+      destination;
+      ownerAccess = resolvedOwnerAccess;
+      participantAccess =
+        List.map resolvedParticipantAccess (fun ({ memberKey; _ }, accessLevel) -> memberKey, accessLevel);
+      personalKey;
+      collection;
+      priority = PrioritySettings.resolve priorityInfo;
+    }

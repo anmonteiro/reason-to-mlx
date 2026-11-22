@@ -1,0 +1,10 @@
+let lambda =
+  f ~x:1
+    ~toString:(* K1 *) (function
+      | A -> "a"
+      | B -> "b")
+    ~y:2
+
+let call = f ~x:1 ~color:(* K2 *) (Option.map index (fun i -> i)) ()
+
+let sameLine = f ~x:1 ~color:(* K3 *) index ()

@@ -1,0 +1,1 @@
+let f = (x: int): /* the type */ string => string_of_int(x);

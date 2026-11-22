@@ -1,0 +1,5 @@
+let spawn content flag =
+  if flag then (
+    (* chips is non-empty here, and modulo keeps the index in bounds. *)
+    let item = get content () in
+    use item)

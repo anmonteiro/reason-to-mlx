@@ -1,0 +1,10 @@
+type t = {
+  effect: int,
+  flag: bool,
+};
+
+let make = () => {effect: 1, flag: true};
+
+let read = ({effect}) => effect;
+
+let get = (r) => r.effect;

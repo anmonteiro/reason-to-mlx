@@ -1,0 +1,3 @@
+let sharedValues = [%mel.obj { tool = toolName [@mel.as "Tool"] }]
+let x = [%intl.s {js|{Tool} helps you|js}] @@ sharedValues
+let y = sharedValues

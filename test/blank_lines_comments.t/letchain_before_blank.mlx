@@ -1,0 +1,6 @@
+let f () =
+  let a = 1 in
+
+  (* blank before this comment, none after *)
+  let b = 2 in
+  b

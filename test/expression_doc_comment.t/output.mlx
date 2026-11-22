@@ -1,0 +1,2 @@
+(* This comment cannot be an OCaml documentation comment because the next item is an expression. *)
+MountPoint.mount decoder element [@@alert "-deprecated"]

@@ -1,0 +1,5 @@
+let x = [%mel.obj { \#and = <><br /> <Foo /></> }]
+
+let make ~children =
+  (* TODO: some note *)
+  <div>children</div>

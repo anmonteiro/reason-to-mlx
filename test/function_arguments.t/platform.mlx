@@ -1,0 +1,4 @@
+let value =
+  match%platform Runtime.platform with
+  | Melange -> "client"
+  | Native -> "server"

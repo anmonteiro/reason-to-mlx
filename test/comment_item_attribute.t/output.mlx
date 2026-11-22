@@ -1,0 +1,26 @@
+module M = struct
+  (* c1 *)
+  let a = 1 [@@live "x"]
+
+  (* c2 *)
+  let b x = x [@@dead "y"]
+
+  (* c3 *)
+  let c x = x [@@alert "z"]
+
+  (* c4 *)
+  type t = int [@@live "w"]
+
+  (* c5 *)
+  external e : int -> int = "e" [@@mel.module "m"]
+
+  (* c6 *)
+  (* c7 *)
+  module N = struct
+    let z = 1
+  end
+  [@@live "a"] [@@dead "b"]
+end
+
+(* c8 *)
+exception E of int [@live]

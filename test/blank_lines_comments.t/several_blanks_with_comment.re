@@ -1,0 +1,9 @@
+let a = 1;
+
+
+
+/* several blanks collapse on both sides of this comment too */
+
+
+
+let b = 2;

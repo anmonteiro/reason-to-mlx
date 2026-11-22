@@ -1,0 +1,20 @@
+let[@react.component] make ?(prompt = [%intl.s {js|Filter|js}]) ~displayMode ~(queryText : string) ?focusOnMount
+  ?delayMs ~(updateQuery : string -> unit) ~(submitQuery : string -> unit) ~(clearQuery : unit -> unit) =
+  let queryStatus, setQueryStatus = ViewRuntime.useStateValue Idle in
+  let delayedQuery = DelayValue.use queryText (Option.getWithDefault delayMs 0) in
+  let visibleQuery =
+    match delayMs with
+    | None -> queryText
+    | Some _ -> delayedQuery
+  in
+  <FilterField
+    prompt
+    displayMode
+    value=visibleQuery
+    ?focusOnMount
+    onChange=(fun text ->
+               setQueryStatus Editing;
+               updateQuery text)
+    onSubmit=submitQuery
+    onClear=clearQuery
+  />

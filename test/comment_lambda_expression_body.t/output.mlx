@@ -1,0 +1,24 @@
+let a =
+  useEffect1
+    (fun () ->
+      (* c1 *)
+      if x then foo ();
+      None)
+    [| x |]
+let b =
+  fetch ~reloadIntervalSecs:30 (fun () ->
+    (* c2 *)
+    SiApi.checkEvents x)
+let c =
+  List.map xs (fun x ->
+    (* c3 *)
+    foo x)
+let d = List.map xs (fun x -> (* c4 *) <div>(React.string x)</div>)
+let e =
+  useEffect1
+    (fun () ->
+      (* c5 *)
+      match x with
+      | A -> ()
+      | B -> ())
+    [| x |]

@@ -1,0 +1,5 @@
+module M = struct
+  let \#effect = 1
+end
+
+let f () = M.\#effect

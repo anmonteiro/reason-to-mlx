@@ -1,0 +1,33 @@
+let request = (~customerIdKey, ~kind, ~timerange, ~where) =>
+  T.request(
+          {
+            customer_id: customerIdKey,
+            dimension: toDimension(kind),
+            metrics: [Q.Metric.Selectable.Ads(Q.Metric.a_metric(Metric_clicks))],
+            timerange,
+            where,
+            having: None,
+            /* Only dimension values are listed here, so no keyword metric is
+               requested and the country is never read. */
+            country: Es_country.us,
+          },
+  );
+
+let fetchOverviewChart = (~abortController=?, ~lastDay=?, ~projectId: Project.Id.t, ~daysBack: int, ()) => {
+  let selectedDates = dateRange(~lastDay?, daysBack);
+  UiKitAnalytics.WaGaOnlyAdapter.fetchOverviewChart(
+    ~abortController?,
+    ~interceptError=false,
+    ~projectId,
+    ~timeframe=UiKitAnalytics.Filters.toApiTimeframe(Some(selectedDates), ~timezone=Utc),
+    /* [granularity] above never yields [Hourly]; the coercion is defense-in-depth so
+       no GA request can ever carry a granularity the endpoint rejects. */
+    ~granularity=
+      UiKitAnalytics.WaGaCompat.supportedGranularityOrDefault(UiKitAnalytics.Dataset.Ga, granularity(daysBack)),
+    ~where=None,
+    ~selectedDates=Some(selectedDates),
+    ~timezone=Utc,
+    ~lastDay?,
+    (),
+  );
+};

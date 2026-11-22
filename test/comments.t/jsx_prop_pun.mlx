@@ -1,0 +1,1 @@
+let view ~label ~url ~active = <SidebarItem label url=(* Comment before a punned prop. *) url active />

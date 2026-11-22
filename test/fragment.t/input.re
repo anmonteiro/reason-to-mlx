@@ -1,0 +1,2 @@
+let fragment = () => <> <span /> <span> {React.string("x")} </span> </>;
+let emptyFragment = () => <> </>;

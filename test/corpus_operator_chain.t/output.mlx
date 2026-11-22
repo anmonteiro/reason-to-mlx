@@ -1,0 +1,8 @@
+let styles ~basis ~grow ~shrink ~margin ~padding ~width ~height =
+  base
+  +++ (Cn.mapSome basis FlexBasis.toStyle
+      +++ (Cn.mapSome grow FlexGrow.toStyle
+          +++ (Cn.mapSome shrink FlexShrink.toStyle
+              +++ (Cn.mapSome margin Margin.toStyle
+                  +++ (Cn.mapSome padding Padding.toStyle
+                      +++ (Cn.mapSome width Width.toStyle +++ Cn.mapSome height Height.toStyle))))))

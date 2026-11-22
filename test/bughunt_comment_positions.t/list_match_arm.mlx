@@ -1,0 +1,4 @@
+let f x =
+  match x with
+  | `URL -> [ (* only filter by current *) 1 ]
+  | `Other -> []

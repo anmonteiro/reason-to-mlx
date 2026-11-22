@@ -1,0 +1,1 @@
+let f xs k = xs |. (RR.list [@alert "-unsafe_keys"]) ~toKey:k Fn.identity

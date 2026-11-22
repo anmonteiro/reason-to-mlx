@@ -1,0 +1,7 @@
+let view = () =>
+  <Row>
+    // leads the first child
+    <A />
+    // leads the second child
+    <B />
+  </Row>;

@@ -1,0 +1,5 @@
+type 'a config = {
+  (* Explains the first field. *)
+  toString : 'a -> string;
+  from : string option;
+}

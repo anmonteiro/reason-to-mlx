@@ -1,0 +1,11 @@
+let bucketBy (type entry) entries ~key ~compare =
+  let compareEntries : entry -> entry -> int = compare in
+  let (module Ordering) = CollectionId.comparable ~cmp:compareEntries in
+  let initial = OrderedMap.make ~id:(module Ordering) in
+  let addEntry newEntry = function
+    | None -> Some [ newEntry ]
+    | Some existingEntries -> Some (newEntry :: existingEntries)
+  in
+  fold entries initial (fun map entry -> OrderedMap.update map (key entry) (addEntry entry))
+  |. OrderedMap.map List.toArray
+  |. OrderedMap.toArray

@@ -1,0 +1,5 @@
+let view = () =>
+  <Foo // trails the tag
+    a=1
+    b=2
+  />;

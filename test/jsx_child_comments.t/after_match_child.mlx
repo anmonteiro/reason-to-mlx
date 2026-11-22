@@ -1,0 +1,8 @@
+let view () =
+  <div>
+    (match x with
+    | A -> <A />
+    | B -> <B />)
+    (* note *)
+    <div ref=r>foo</div>
+  </div>

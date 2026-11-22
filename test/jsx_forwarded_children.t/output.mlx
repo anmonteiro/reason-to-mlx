@@ -1,0 +1,5 @@
+module Comp = struct
+  let[@react.component] make ~(label : string) ?children = <div>(RR.renderDefaultNull children (fun c -> c))</div>
+end
+
+let render ~align ~children = <Comp ?align ?children label="hi" />

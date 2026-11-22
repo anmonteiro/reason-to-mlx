@@ -1,0 +1,6 @@
+let view = () =>
+  <Foo
+    // leads the JSX-valued prop
+    icon=<Icon />
+    b=2
+  />;

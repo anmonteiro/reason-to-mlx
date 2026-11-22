@@ -1,0 +1,4 @@
+let f = (
+  firstArgumentWithALongName, // explains the first argument in detail
+  secondArgumentNameAlsoLong,
+) => firstArgumentWithALongName + secondArgumentNameAlsoLong;

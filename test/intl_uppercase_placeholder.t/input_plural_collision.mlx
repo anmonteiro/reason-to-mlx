@@ -1,0 +1,2 @@
+let pluralCase =
+  [%intl.s {js|{count, plural, one {Tool} other {Tools}}|js}] @@ [%mel.obj { tool = toolName [@mel.as "Tool"] }]

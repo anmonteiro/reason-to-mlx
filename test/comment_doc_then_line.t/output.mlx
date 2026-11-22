@@ -1,0 +1,14 @@
+(* K1 *)
+(** doc *)
+let f a = a
+
+(* K2 *)
+
+(** doc *)
+external makeProps : a:int -> unit -> t = ""
+
+(* K3 *)
+(* K4 *)
+
+(** doc *)
+let g a = a

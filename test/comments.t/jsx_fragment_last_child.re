@@ -1,0 +1,7 @@
+let view = () =>
+  <>
+    <meta charSet="utf-8" />
+    // leading comment one
+    // leading comment two
+    <style> {React.string("body {}")} </style>
+  </>;

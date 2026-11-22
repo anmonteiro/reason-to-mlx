@@ -1,0 +1,30 @@
+let letChain () =
+  let a = 1 in
+
+  let b = 2 in
+  b
+
+let sequence () =
+  print_string "a";
+
+  print_string "b";
+  print_string "c"
+
+let labelled ~label ?(disabled = false) () =
+  let a = label in
+
+  let b = disabled in
+  b
+
+let rec isEven n = if n = 0 then true else isOdd (n - 1)
+
+and isOdd n = if n = 0 then false else isEven (n - 1)
+
+let withCallback () =
+  List.map
+    (fun x ->
+      let doubled = x * 2 in
+
+      let tripled = x * 3 in
+      doubled + tripled)
+    [ 1; 2; 3 ]

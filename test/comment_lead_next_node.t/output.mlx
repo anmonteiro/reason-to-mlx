@@ -1,0 +1,49 @@
+let call =
+  f a
+    (* trails a *)
+    (* leads b *)
+    b
+
+let tuple = a, (* leads b *) b, c (* trails c *)
+
+let lambda x =
+  (* leads the body *)
+  let y = 1 (* trails 1 *) in
+  y (* trails y *)
+
+let prop = <div className=(* leads the value *) "x" onClick=(fun _ -> (* leads the unit *) ()) />
+
+let pipe =
+  x
+  |>
+  (* leads List.map *)
+  List.map (* leads f *) f
+  |>
+  (* leads List.rev *)
+  List.rev
+
+let operand =
+  "a"
+  ^
+  (* leads b *)
+  "b"
+
+let value = (* leads the value *) 1
+
+let record =
+  {
+    base with
+    (* leads one *)
+    a = 1;
+  }
+
+let items = [ "first" (* trails first *); "second" (* trails second *); "third" ]
+
+let fallback =
+  match v with
+  | Some a -> (* leads a *) a
+  | None -> 0
+
+let element = (* leads the element *) <Foo a=1 />
+
+let lambdaElement x = (* leads the element *) <Foo a=x />

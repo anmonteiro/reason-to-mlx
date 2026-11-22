@@ -1,0 +1,3 @@
+let use () =
+  let%melange_only combine ~left = fun ~right -> left + right in
+  combine ~left:1 ~right:2

@@ -1,0 +1,40 @@
+let s x =
+  x
+  ^ "|"
+  (* c1 *)
+  ^ y
+  ^ "|"
+
+let t a b c =
+  a
+  + b
+  (* c2 *)
+  + c
+
+let u a b =
+  a
+  |> f
+  (* c3 *)
+  |> g b
+
+let v a b =
+  a
+  && b
+  (* c4 *)
+  && c
+
+let w a b =
+  a
+  +
+  (* c5 *)
+  b
+
+let x a b =
+  f a b
+  (* c6 *)
+  / 60
+
+let y a b =
+  a
+  (* c7 *)
+  <> b

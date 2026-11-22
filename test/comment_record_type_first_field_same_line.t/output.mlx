@@ -1,0 +1,29 @@
+type t = {
+  (* K1 *)
+  a : int;
+  b : int;
+}
+
+type u = {
+  (* K2 *)
+  a : int;
+  b : int;
+}
+
+type v =
+  | A of {
+      (* K3 *)
+      a : int;
+      (* K4 *)
+      b : int;
+    }
+  | B of {
+      (* K5 *)
+      a : int;
+      b : int;
+    }
+  | C of {
+      a : int; (* K6 *)
+      (* K7 *)
+      b : int;
+    }

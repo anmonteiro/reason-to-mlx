@@ -1,0 +1,18 @@
+type action =
+  | ModalOpened of string
+  (* documents SetLabelName *)
+  | SetLabelName of string
+  | SubmitStart of string
+  (* one *)
+  (* two *)
+  | SubmitFailedCommon
+
+type longFieldNames = {
+  firstLongFieldName : int;
+  (* documents secondLongFieldName *)
+  secondLongFieldName : int;
+  thirdLongFieldName : int;
+  (* one *)
+  (* two *)
+  fourthLongFieldName : int;
+}

@@ -1,0 +1,2 @@
+let firehoseValues = [%mel.obj { firehose = "Firehose" }]
+let firehoseTitle = [%intl.el {js|Powered by {firehose}|js}] @@ firehoseValues

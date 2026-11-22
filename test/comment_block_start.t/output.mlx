@@ -1,0 +1,12 @@
+let useBody () = (* first in the body *) 1
+
+let matchBody =
+  match flag with
+  | true -> 1
+  | false -> (* first in the case *) 2
+
+let nested =
+  let first = 1 in
+  (* before the second *)
+  let second = 2 in
+  first + second

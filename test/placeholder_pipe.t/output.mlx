@@ -1,0 +1,17 @@
+let div = Webapi.Dom.Document.createElement "div" Webapi.Dom.document
+
+let renderMoney ~money column json =
+  match column with
+  | Cpc -> AdsMoney.format money (Q.Metric.Field.value_of_json (Q.Metric.metric Metric_avg_cpc) json)
+  | Cost -> AdsMoney.format money (Q.Metric.Field.value_of_json (Q.Metric.metric Metric_cost) json)
+
+let defaults country =
+  { (getDefault ()) with countryAndGroupBy = CountryAndGroupBy.fromCountry ~country ~default:Location }
+
+let make ?lastDay ~onChange =
+  <DropdownWithCalendar
+    onChange=(fun (value : preset DropdownWithCalendar.value) -> onChange (maybeDateRangeToMoment ?lastDay value))
+  />
+
+let fromString (query : string) ~(settings : TkGetSeSettingsInterface.data) =
+  Url.parseQueryToDict query () |. fun __x -> fromQuery ~settings ~prevQuery:(Js.Dict.empty ()) ~query:__x

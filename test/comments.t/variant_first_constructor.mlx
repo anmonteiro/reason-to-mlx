@@ -1,0 +1,4 @@
+type ('input, 'error) action =
+  (* Explains the first constructor. *)
+  | ModalOpened of string
+  | SetLabelName of string

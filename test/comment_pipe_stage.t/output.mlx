@@ -1,0 +1,14 @@
+let filtered =
+  sortedPatches
+  (* filter one *)
+  |. List.filter (fun patch ->
+    let a = 1 in
+    a = patch.x)
+  (* filter two *)
+  |. List.filter (fun patch ->
+    let b = 2 in
+    b = patch.y)
+  (* map it *)
+  |. List.map (fun patch ->
+    let c = 3 in
+    c + patch.z)

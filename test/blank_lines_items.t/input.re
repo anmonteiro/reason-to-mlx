@@ -1,0 +1,29 @@
+let a = 1;
+
+let b = 2;
+let c = 3;
+
+type t = int;
+
+type u = string;
+type v = float;
+
+external raw1: int => int = "raw1";
+
+external raw2: int => int = "raw2";
+external raw3: int => int = "raw3";
+
+open Belt;
+
+open List;
+open Array;
+
+let w = 4;
+/* between w and open Deque: no source blank, so no blank is expected */
+open Deque;
+
+let last = 5;
+/* between last and open Queue: a source blank after this comment, so one
+   blank is expected between the comment and open Queue */
+
+open Queue;

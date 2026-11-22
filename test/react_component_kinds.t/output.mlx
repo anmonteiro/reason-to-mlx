@@ -1,0 +1,5 @@
+let[@react.component] componentMake () = <div />
+
+let[@react.client.component] clientMake () = <div />
+
+let[@react.async.component] asyncMake () = <div />

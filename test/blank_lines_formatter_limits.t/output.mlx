@@ -1,0 +1,20 @@
+let afterOpen x =
+  let open Foo in
+  let a = x in
+  a
+
+let afterLocalModule x =
+  let module M = Bar in
+  M.run x
+
+let betweenCases x =
+  match x with
+  | A -> 1
+  | B -> 2
+
+type fields = {
+  a : int;
+  b : int;
+}
+
+let record = { a = 1; b = 2 }

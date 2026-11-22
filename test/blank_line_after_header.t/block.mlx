@@ -1,0 +1,10 @@
+(* Host rows grouped by cluster, one cell per row (a gw router has one row per load balancer type),
+   coloured by one metric. 5xx % and connection use take the green/orange/red levels, req/s and p99
+   five fixed log bins of one blue. Grey means no traffic, or no exporter sample for connection use.
+   Hovering a cell shows its numbers, clicking opens the host page. The controls render only when
+   [onQuery] is given. *)
+
+type row = HaSnapshot_t.host_row
+
+(* magnitude bins, smallest first *)
+type metric = int

@@ -1,0 +1,9 @@
+let f () =
+  list
+  |. RR.list
+       ~toKey:(fun (_spec, chartProps) -> chartProps##dataKey)
+       ~intersperse:<Divider />
+       (fun (spec, chartProps) ->
+         (* Look for compare data - check both complete and incomplete dataKeys *)
+         let compareDataKey = 1 in
+         compareDataKey)

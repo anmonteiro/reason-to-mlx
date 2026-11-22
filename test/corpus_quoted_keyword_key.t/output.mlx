@@ -1,0 +1,12 @@
+let title (growth : Growth.t) =
+  let values =
+    [%mel.obj
+      {
+        days = growth.windowDays |. Int.toString |. RR.s;
+        from = RR.s (Format.day growth.comparedTo);
+        \#to = RR.s (Format.day growth.asOf);
+      }]
+  in
+  [%intl.el
+    { msg = {js|{days}-day growth · {from} → {to}|js}; desc = "Growth grid heading on the UGC Citations Report" }]
+  @@ values

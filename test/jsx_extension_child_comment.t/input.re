@@ -1,0 +1,20 @@
+let sameLineBefore = <Text> /* K1 */ [%intl.el {js|hello|js}] </Text>;
+
+let sameLineBeforeThenSibling = <Text> /* K2 */ [%intl.el {js|hello|js}] <Text /> </Text>;
+
+let afterSibling = <Text> <Text /> /* K3 */ [%intl.el {js|hello|js}] <Text /> </Text>;
+
+let ownLineBefore = <Text>
+  // K4
+  [%intl.el {js|hello|js}]
+</Text>;
+
+let ownLineAfterSibling = <Text>
+  <Text />
+  // K5
+  [%intl.el {js|hello|js}]
+  <Text />
+</Text>;
+
+let trailing = <Text> [%intl.el {js|hello|js}] // K6
+  <Text /> </Text>;

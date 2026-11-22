@@ -1,0 +1,6 @@
+let view = () =>
+  <ExportRowsLimitRadioButton
+    // Explains why this passes maxRows for both props.
+    exportRowsPerReportLimit=maxRows
+    maxRowsAllowed={Some(maxRows)}
+  />;

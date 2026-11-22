@@ -1,0 +1,7 @@
+let a = 1
+(* c1 line *)
+
+(* c2 block *)
+
+(** c3 doc *)
+let b = 2

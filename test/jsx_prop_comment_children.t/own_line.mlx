@@ -1,0 +1,13 @@
+let noChildren = <A x=(<B />) y=(* K1 *) "k" />
+
+let oneChild = <A x=(<B />) y=(* K2 *) "k"><C /></A>
+
+let stringChild = <A x=(<B />) y=(* K3 *) "k">(React.string "a") <C /></A>
+
+let betweenChildren = <A x=(<B />) y=(* K4 *) "k"><C /> (* K5 *) <C /></A>
+
+let jsxValue = <A x=(<B />) y=((* K6 *) <B />)><C /> <D /></A>
+
+let callValue = <A x=(<B />) y=(* K7 *) (f 1)><C /></A>
+
+let lastProp = <A content=(<B><C /></B>) onClose=(* K8 *) f><C /></A>

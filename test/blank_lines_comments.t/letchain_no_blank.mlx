@@ -1,0 +1,5 @@
+let f () =
+  let a = 1 in
+  (* no blank on either side of this comment *)
+  let b = 2 in
+  b

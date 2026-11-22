@@ -1,0 +1,16 @@
+type state = {
+  (* K1 *)
+  isOpen : bool;
+  domainValue : string;
+}
+
+let x = [ (* K2 *) 1; 2 ]
+
+let y =
+  {
+    (* K3 *)
+    a = 1;
+    b = 2;
+  }
+
+let z = f [ (* K4 *) 1; 2 ]

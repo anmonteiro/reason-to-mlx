@@ -1,0 +1,13 @@
+type pair =
+  (* one *)
+  (* two *)
+  | A of int
+  | B of int
+
+type triple =
+  (* one *)
+  (* two *)
+  (* three *)
+  | A of int
+  | B of int
+  | C of int

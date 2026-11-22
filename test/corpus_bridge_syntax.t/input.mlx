@@ -1,0 +1,6 @@
+let ( let* ) promise fn = fn promise
+let ( and* ) left right = left, right
+
+let useLabels ~\#method:method_ ~\#match:match_ = method_, match_
+
+let labels = useLabels ~\#method:"method" ~\#match:"match"

@@ -1,0 +1,1 @@
+let f = (fun (x : int) : string -> string_of_int x) [@u]

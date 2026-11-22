@@ -1,0 +1,6 @@
+let f x =
+  match x with
+  | Some y ->
+    (* Doc on the arm body — with an em dash. *)
+    y + 1
+  | None -> 0

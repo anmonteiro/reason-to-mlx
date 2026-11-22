@@ -1,0 +1,4 @@
+let g = () => {
+  let f = (x: int): string => string_of_int(x);
+  f(1);
+};
