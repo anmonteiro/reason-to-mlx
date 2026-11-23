@@ -5759,8 +5759,8 @@ let convert_exn ~conf ~associative_operators ~kind ~input_name ~output_name reas
 let error_message exn =
   match exn with
   | Reason.Reason_errors.Reason_error (error, loc) ->
-      Reason.Reason_errors.report_error Format.str_formatter ~loc error;
-      Format.flush_str_formatter ()
+      Format.asprintf "%a"
+        (fun fmt -> Reason.Reason_errors.report_error fmt ~loc) error
   | Failure message -> message
   | Sys_error message -> message
   | exn -> Printexc.to_string exn
@@ -5775,6 +5775,13 @@ let convert ?(conf = Mlx.Conf.default) ?(associative_operators = [])
     Option.value output_name
       ~default:(match kind with Structure -> "stdout.mlx" | Signature -> "stdout.mli")
   in
-  try
-    Ok (convert_exn ~conf ~associative_operators ~kind ~input_name ~output_name source)
-  with exn -> Error (error_message exn)
+  let previous_input_name = !Location.input_name in
+  let previous_recoverable = !(Reason.Reason_config.recoverable) in
+  Fun.protect
+    ~finally:(fun () ->
+      Location.input_name := previous_input_name;
+      Reason.Reason_config.configure ~recoverable:previous_recoverable)
+    (fun () ->
+      try
+        Ok (convert_exn ~conf ~associative_operators ~kind ~input_name ~output_name source)
+      with exn -> Error (error_message exn))

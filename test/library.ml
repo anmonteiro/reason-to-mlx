@@ -14,3 +14,23 @@ let () =
   | _ -> failwith "Expected a diagnostic for invalid Reason");
   (* A failed conversion must not prevent later calls in a long-lived client. *)
   Reason_to_mlx.convert "let answer = 43;" |> expect "let answer = 43\n"
+
+let () =
+  Format.pp_print_string Format.str_formatter "caller output";
+  (match Reason_to_mlx.convert ~input_name:"invalid.re" "let =" with
+  | Error message ->
+      assert (not (String.includes ~affix:"caller output" message));
+      assert (String.includes ~affix:"invalid.re" message)
+  | Ok _ -> failwith "Expected a diagnostic");
+  assert (String.equal (Format.flush_str_formatter ()) "caller output")
+
+let () =
+  List.iter
+    (fun source ->
+      Reason.Reason_config.configure ~recoverable:true;
+      Location.input_name := "caller.re";
+      ignore (Reason_to_mlx.convert ~input_name:"converted.re" source);
+      assert !(Reason.Reason_config.recoverable);
+      assert (String.equal !Location.input_name "caller.re"))
+    [ "let answer = 42;"; "let =" ];
+  Reason.Reason_config.configure ~recoverable:false
